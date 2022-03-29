@@ -7,6 +7,11 @@ node () {
 	stage ('App-IC - Checkout') {
  	 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'git-login', url: 'https://github.com/RpiKGH/jenkins-sample.git']]]) 
 	}
+	stage ('Quality check'){
+		withSonarQubeEnv('Sonar'){
+			bat "mvn sonar:sonar"
+		}
+	}
 	stage ('App-IC - Build') {
  			// Maven build step
 	withMaven(maven: 'maven') { 
