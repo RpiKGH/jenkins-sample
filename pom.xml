@@ -9,7 +9,7 @@
   <url>http://maven.apache.org</url>
   
   <properties>
-    <sonar.projectkey>RpiKGH_jenkins-sample</sonar.projectKey>
+    <sonar.projectKey>RpiKGH_jenkins-sample</sonar.projectKey>
     <sonar.organization>rpikgh</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
   </properties>
